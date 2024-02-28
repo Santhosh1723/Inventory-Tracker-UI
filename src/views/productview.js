@@ -8,6 +8,8 @@ import Titlebars from "../components/navbar/Titlebar";
 import NavBar from "../components/navbar/Navbar2";
 import ViewImg from "./ViewImg.jpg";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from "@mui/icons-material/Edit";
 
 function ProductView() {
   return (
@@ -19,17 +21,37 @@ function ProductView() {
         backgroundImage:`url(${ViewImg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        height: 830,
+        height: "auto",
         backgroundPosition: "",
       }}
     >
       <Container>
         <Row>
-          <Col xs="10" ></Col>
-          <Col xs="2" >
+        <Col xs={2} md={2}>
+        <Button
+              href="#"
+              variant="danger"
+              style={{ marginLeft:30,paddingRight: 30, marginTop: 30, borderRadius:50 }}
+            >
+              <DeleteIcon/>Remove
+            </Button>{" "}
+        </Col>
+        <Col xs={2} md={2}>
+        <Button
+              href="/CreateProduct"
+              variant="info"
+              style={{ paddingRight: 30, marginTop: 30,borderRadius:50 }}
+            ><EditIcon/>
+              Edit
+            </Button>{" "}
+        </Col>
+          <Col xs={6} md={6}>
+
+          </Col>
+          <Col xs={2} md={2}>
             <Button
               href="/ProductTable"
-              variant="danger"
+              variant="success"
               style={{ paddingRight: 30, marginTop: 30, borderRadius:50 }}
             ><ArrowBackIcon/>
               Back
@@ -139,6 +161,7 @@ function ProductView() {
             </Card.Body>
           </Card>
         </Row>
+        <Row style={{marginTop:40}}></Row>
       </Container>
     </div></>
   );

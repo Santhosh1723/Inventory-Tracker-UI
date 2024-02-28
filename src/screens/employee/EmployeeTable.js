@@ -154,7 +154,7 @@ function EmployeeTable() {
 
           <Row style={{ marginTop: 30 }}>
             <Table striped hover>
-              <thead>
+              <thead style={{ position: "sticky", top: "0" }}>
                 <tr >
                   <th  style={{ backgroundColor: "#618685",color:"#fff" }} >ID</th>
                   <th  style={{ backgroundColor: "#618685",color:"#fff" }}>Name</th>
@@ -185,6 +185,7 @@ function EmployeeTable() {
               </tbody>
             </Table>
           </Row>
+          <Row style={{marginTop:40}}></Row>
         </Container>
       </div>
     </>

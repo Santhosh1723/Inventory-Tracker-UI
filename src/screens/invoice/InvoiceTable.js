@@ -13,6 +13,7 @@ import PreviewIcon from '@mui/icons-material/Preview';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import "./Invoice.css";
 
+
 //import "./TableCategory.css";
 function InvoiceTable() {
   return (
@@ -62,12 +63,13 @@ function InvoiceTable() {
                   ></path>
                 </svg>
               </Button>
-             {" "}
+         
             </Col>
           </Row>
+
           <Row style={{ marginTop: 30 }}>
             <Table striped hover responsive>
-              <thead>
+              <thead style={{ position: "sticky", top: "0" }}>
                 <tr>
                   <th  style={{ backgroundColor: "#618685",color:"#fff" }}> ID</th>
                   <th style={{ backgroundColor: "#618685",color:"#fff" }}>Customer </th>
@@ -93,7 +95,7 @@ function InvoiceTable() {
                     <td>{d.v6}</td>
                     <td>
                       <Button href={d.Link}>
-                        {d.v7}
+                       <VisibilityIcon/> {d.v7}
                       </Button>
                     </td>
                   </tr>
@@ -101,6 +103,7 @@ function InvoiceTable() {
               </tbody>
             </Table>
           </Row>
+          <Row style={{marginTop:40}}></Row>
         </Container>
       </div>
     </>

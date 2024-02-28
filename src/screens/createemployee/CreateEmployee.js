@@ -20,7 +20,7 @@ function CreateEmployee() {
       backgroundImage:`url(${CreateImg})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      height: 750,
+      height: "auto",
     }}
   >
       <div>
@@ -80,6 +80,52 @@ function CreateEmployee() {
                     />
                   </Form.Group>
                 </Row>
+                <Form.Group className="mb-3" controlId="formGridAddress">
+                  <Form.Label>Address</Form.Label>
+                  <Form.Control placeholder="Apartment, studio, or floor" />
+                </Form.Group>
+
+                <Row className="mb-3">
+                  <Form.Group as={Col} controlId="formGridCity">
+                    <Form.Label>City</Form.Label>
+                    <Form.Control type="text" placeholder="Name of City" />
+                  </Form.Group>
+
+                  <Form.Group as={Col} controlId="formGridState">
+                    <Form.Label>State</Form.Label>
+                    <Form.Select defaultValue="Choose...">
+                      <option>Choose...</option>
+                      <option>Tamil Nadu</option>
+                      <option>Kerala</option>
+                      <option>Kasmir</option>
+                      <option>Delhi</option>
+                      <option>Andra Pradesh</option>
+                      <option>Madhya Pradesh</option>
+                      <option>Karnataka</option>
+                      <option>Bihar</option>
+                      <option>Gujarat</option>
+                      <option>Harayana</option>
+                    </Form.Select>
+                  </Form.Group>
+
+                  <Form.Group as={Col} controlId="formGridZip">
+                    <Form.Label>Postal code</Form.Label>
+                    <Form.Control  type="Number" placeholder="Enter Pin" />
+                  </Form.Group>
+                </Row>
+                <Row>
+                <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlTextarea1"
+                  >
+                    <Form.Label>Description & Experiance</Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      rows={4}
+                      placeholder= "Experiance and Description"
+                    />
+                  </Form.Group>
+                </Row>
                 <Row>
                   <Form.Group as={Col} controlId="formGridJoinedAt">
                     <Button
@@ -102,6 +148,7 @@ function CreateEmployee() {
           </Card.Body>
           </Card>
         </Row>
+        <Row style={{marginTop:40}}></Row>
         </Container>
       </div>
     </div>

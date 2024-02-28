@@ -136,7 +136,7 @@ function SignUP()
                   <Col>
                     <Form.Group as={Col} controlId="formGridSignUp">
                       <small className="text-muted">
-                        <a href="/" style={{ marginLeft: 280 }}>
+                        <a href="/Login" style={{ marginLeft: 280 }}>
                           SIGN IN NOW
                         </a>
                       </small>

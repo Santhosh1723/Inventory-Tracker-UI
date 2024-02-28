@@ -9,6 +9,7 @@ import NavBar from "../../components/navbar/Navbar2";
 import Titlebars from "../../components/navbar/Titlebar";
 import Heading from "./CategoryArray";
 import Istock from "./Istock.jpg";
+import ListIcon from "@mui/icons-material/List";
 import "./TableCategory.css";
 
 function ProductCategory() {
@@ -64,13 +65,23 @@ function ProductCategory() {
           </Row>
           <Row style={{ marginTop: 30 }}>
             <Table striped hover>
-              <thead>
+              <thead style={{ position: "sticky", top: "0" }}>
                 <tr>
-                  <th  style={{ backgroundColor: "#618685",color:"#fff" }}>ID</th>
-                  <th  style={{ backgroundColor: "#618685",color:"#fff"}}>Name</th>
-                  <th  style={{ backgroundColor: "#618685",color:"#fff" }}>Total Product </th>
-                  <th  style={{ backgroundColor: "#618685",color:"#fff" }}>Price</th>
-                  <th  style={{ backgroundColor: "#618685",color:"#fff" }}>Action </th>
+                  <th style={{ backgroundColor: "#618685", color: "#fff" }}>
+                    ID
+                  </th>
+                  <th style={{ backgroundColor: "#618685", color: "#fff" }}>
+                    Name
+                  </th>
+                  <th style={{ backgroundColor: "#618685", color: "#fff" }}>
+                    Total Product{" "}
+                  </th>
+                  <th style={{ backgroundColor: "#618685", color: "#fff" }}>
+                    List of Product
+                  </th>
+                  <th style={{ backgroundColor: "#618685", color: "#fff" }}>
+                    Action
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -79,7 +90,11 @@ function ProductCategory() {
                     <td>{d.v1}</td>
                     <td>{d.v2}</td>
                     <td>{d.v3}</td>
-                    <td>{d.v4}</td>
+                    <td>
+                      <Button href="/ProductCategoryList" variant="info">
+                        <ListIcon /> {d.v4}
+                      </Button>
+                    </td>
                     <td>
                       <Button href={d.Link} variant="link">
                         <VisibilityIcon></VisibilityIcon>
@@ -91,6 +106,7 @@ function ProductCategory() {
               </tbody>
             </Table>
           </Row>
+          <Row style={{ marginTop: 40 }}></Row>
         </Container>
       </div>
     </>

@@ -22,13 +22,13 @@ function CreateCategory()
       backgroundImage:`url(${CreateImg})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      height: 750,
+      height: "auto",
     }}
   >
       <div>
         <Container style={{width:1100}}>
         <Row >
-          <Card border="warning" style={{marginTop:90}}  className="commoncard">
+          <Card border="warning" style={{marginTop:60}}  className="commoncard">
             <Card.Header>
               <Card.Title></Card.Title>
             </Card.Header>
@@ -45,19 +45,28 @@ function CreateCategory()
                 <Form.Label>Category Name</Form.Label>
                 <Form.Control type="text" placeholder="Name of the Product" />
                 <Row style={{marginBottom:20}}></Row>
-                <Form.Label>Product ID</Form.Label>
+                <Form.Label>Category ID</Form.Label>
                 <Form.Control type="text" placeholder="ID"/>
+            </Row>
+            <Row>
+            <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlTextarea1"
+                  >
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      rows={5}
+                      placeholder= "Basic Info About Product"
+                    />
+                  </Form.Group>
             </Row>
             <Row style={{marginBottom:30}}>
               <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>N0 Of Product</Form.Label>
-                <Form.Control type="text" placeholder="Quantity" />
+                <Form.Label>Created At</Form.Label>
+                <Form.Control type="Date" placeholder="Date of Creating" />
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridStatus">
-                <Form.Label>Product Price</Form.Label>
-                <Form.Control type="Number" placeholder="Price of an Product" />
-              </Form.Group>
             </Row>
            
             <Row>
@@ -74,6 +83,7 @@ function CreateCategory()
           </Card.Body>
           </Card>
         </Row>
+        <Row style={{marginTop:40}}></Row>
         </Container>
       </div>
     </div>

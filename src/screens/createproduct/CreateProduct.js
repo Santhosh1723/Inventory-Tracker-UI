@@ -21,7 +21,7 @@ function CreateProduct()
       backgroundImage:`url(${CreateImg})`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
-      height: 780,
+      height: "auto",
     }}
   >
       <div>
@@ -95,6 +95,7 @@ function CreateProduct()
           </Card.Body>
           </Card>
         </Row>
+        <Row style={{marginTop:40}}></Row>
         </Container>
       </div>
     </div></>

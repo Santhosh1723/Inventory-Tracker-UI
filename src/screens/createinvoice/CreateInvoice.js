@@ -1,4 +1,5 @@
 import React from "react";
+//import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
@@ -8,16 +9,23 @@ import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/esm/Container";
 import NavBar from "../../components/navbar/Navbar2";
 import Titlebars from "../../components/navbar/Titlebar";
-import MyVerticallyCenteredModal from "../newinvoice/NewInvoice";
-import CreateInvoiceArray from "./CreateInvoiceArray";
+//import MyVerticallyCenteredModal from "../newinvoice/NewInvoice";
+//import CreateInvoiceArray from "./CreateInvoiceArray";
+import AddIcon from "@mui/icons-material/Add";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SaveIcon from "@mui/icons-material/Save";
 import CreateInv from "./CreateInv.jpg";
-import SaveIcon from '@mui/icons-material/Save';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';;
+//import NewInvoicetArray from "./NewInvoiceArray";
+import SearchIcon from '@mui/icons-material/Search';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RefreshIcon from '@mui/icons-material/Refresh';
+//import Card from 'react-bootstrap/Card';
 
 function CreateInvoice() {
-  const [modalShow, setModalShow] = React.useState(false);
+
+  
+ 
 
   return (
     <>
@@ -50,34 +58,39 @@ function CreateInvoice() {
               <Button
                 href="/InvoiceTable"
                 variant="primary"
-                style={{ marginTop: 70,borderRadius:50 }}
-              ><ArrowBackIcon></ArrowBackIcon>
+                style={{ marginTop: 70, borderRadius: 50 }}
+              >
+                <ArrowBackIcon></ArrowBackIcon>
                 Back To Invoice
               </Button>{" "}
             </Col>
           </Row>
           <Row>
             <Col>
-              <Button variant="success"  style={{borderRadius:50 }} onClick={() => setModalShow(true)}><AddIcon></AddIcon>
+              <Button
+                variant="success"
+                href="/NewInvoice"
+                style={{ borderRadius: 50 }}
+              >
+                <AddIcon />
                 Add Item
               </Button>{" "}
-              <MyVerticallyCenteredModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-              />
-              <Button href="#Save" style={{borderRadius:50 }} variant="info"><SaveIcon></SaveIcon>
+              <Button href="#Save" style={{ borderRadius: 50 }} variant="info">
+                <SaveIcon />
                 Save Invoice
               </Button>{" "}
-              <Button href="#remove" style={{borderRadius:50 }} variant="danger"><RemoveCircleIcon></RemoveCircleIcon>
-                Remove Item
+              <Button
+                href="#remove"
+                style={{ borderRadius: 50 }}
+                variant="danger"
+              >
+                <DeleteIcon />
+                Delete Invoice
               </Button>{" "}
             </Col>
           </Row>
 
-          <Card
-            className="commoncard"
-            style={{ marginTop: 30 }}
-          >
+          <Card className="commoncard" style={{ marginTop: 30 }}>
             <Container style={{ width: 1000 }}>
               <Form>
                 <Row>
@@ -148,12 +161,12 @@ function CreateInvoice() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formGridAddress1">
-                  <Form.Label>Address</Form.Label>
+                  <Form.Label>Customer Address</Form.Label>
                   <Form.Control placeholder="1234 Main St" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formGridAddress2">
-                  <Form.Label>Address 2</Form.Label>
+                  <Form.Label>Company Address</Form.Label>
                   <Form.Control placeholder="Apartment, studio, or floor" />
                 </Form.Group>
 
@@ -202,48 +215,9 @@ function CreateInvoice() {
               </Form>
             </Container>
           </Card>
-          <Row>
-            {" "}
-            <h1
-              style={{
-                marginTop: 50,
-                marginBottom: 50,
-                textAlign: "center",
-                WebkitTextStrokeColor: "yellow",
-                WebkitTextStrokeWidth: "1px",
-                color: "white",
-                fontWeight: 800,
-              }}
-            >
-              Billing Products
-            </h1>
-          </Row>
+         
 
-          <Table striped hover>
-            <thead>
-              <tr>
-                {CreateInvoiceArray.map((d) => (
-                  <th>{d.Head}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {CreateInvoiceArray.map((d) => (
-                <tr>
-                  <td>{d.v1}</td>
-                  <td>{d.v2}</td>
-                  <td>{d.v3}</td>
-                  <td>{d.v4}</td>
-                  <td>{d.v5}</td>
-                </tr>
-              ))}
-              <tr>
-                <td colSpan={2}></td>
-                <th colSpan={2}> TOTAL</th>
-                <td>150000</td>
-              </tr>
-            </tbody>
-          </Table>
+          
           <Row style={{ marginTop: 40 }}></Row>
         </Container>
       </div>
@@ -252,3 +226,4 @@ function CreateInvoice() {
 }
 
 export default CreateInvoice;
+

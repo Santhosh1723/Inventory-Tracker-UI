@@ -97,7 +97,7 @@ function UserProfile() {
                   marginTop: 50,
                 }}
               >
-                <Table  >
+                <Table responsive="sm" >
                   <thead>
                     <tr>
                       <th></th>
@@ -162,7 +162,7 @@ function UserProfile() {
                  className="hovercard-colorless "
                 style={{ width: "18rem", border: "none"}}
               >
-                <Table style={{ marginBottom: 0}}>
+                <Table style={{ marginBottom: 0}} responsive="sm">
                   <tbody>
                     <tr>
                       <th style={{ borderRadius: 10 }}>

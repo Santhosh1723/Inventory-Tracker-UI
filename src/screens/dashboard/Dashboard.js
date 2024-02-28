@@ -8,12 +8,12 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/esm/Button";
 import NavBar from "../../components/navbar/Navbar2";
 import Titlebars from "../../components/navbar/Titlebar";
-import MyVerticallyCenteredModal from "../newinvoice/NewInvoice";
+//import MyVerticallyCenteredModal from "../newinvoice/NewInvoice";
 import "./Dashboard.css";
 import Istock from "./Istock.jpg";
 
 function Dashboard() {
-  const [modalShow, setModalShow] = React.useState(false);
+  //const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
       <Titlebars />
@@ -130,15 +130,12 @@ function Dashboard() {
                   />
                   <br></br>
 
-                  <Button onClick={() => setModalShow(true)} className="button">
+                  <Button href="/NewInvoice" className="button">
                     <ForwardIcon />
                     <span className="button-content">Go To Sales</span>
                   </Button>
 
-                  <MyVerticallyCenteredModal
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
-                  />
+              
                   <Card.Link href="#"></Card.Link>
                 </Card.Body>
               </Card>

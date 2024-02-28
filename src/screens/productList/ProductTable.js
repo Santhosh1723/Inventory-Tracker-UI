@@ -11,6 +11,7 @@ import NavBar from "../../components/navbar/Navbar2";
 import Titlebars from "../../components/navbar/Titlebar";
 import IndianCurrency from "./IndianCurrency.jpg";
 import ProductArray from "./ProductArray";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 
 function ProductTable() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -155,7 +156,7 @@ function ProductTable() {
 
           <Row style={{ marginTop: 30 }}>
             <Table striped hover>
-              <thead>
+              <thead style={{ position: "sticky", top: "0" }}>
                 <tr>
                   <th   style={{ backgroundColor: "#618685",color:"#fff" }}>ID</th>
                   <th  style={{ backgroundColor: "#618685",color:"#fff" }}>Name</th>
@@ -174,13 +175,14 @@ function ProductTable() {
                     <td>{d.v4}</td>
                     <td>{d.v5}</td>
                     <td>
-                      <Button href={d.Link}>{d.v6}</Button>
+                      <Button href={d.Link}><VisibilityIcon/>{d.v6}</Button>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </Table>
           </Row>
+          <Row style={{marginTop:40}}></Row>
         </Container>
       </div>
     </>

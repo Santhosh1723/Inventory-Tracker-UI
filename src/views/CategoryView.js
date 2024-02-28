@@ -9,6 +9,8 @@ import NavBar from "../components/navbar/Navbar2";
 import ViewImg from "./ViewImg.jpg";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { grey } from "@mui/material/colors";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from "@mui/icons-material/Edit";
 
 function CategoryView() {
   return (
@@ -20,18 +22,36 @@ function CategoryView() {
         backgroundImage:`url(${ViewImg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        height: 770,
+        height: "auto",
         backgroundPosition: "",
       }}
     >
       <div>
         <Container style={{width:1000}}>
         <Row>
-          <Col xs="10" ></Col>
-          <Col xs="2" >
+          <Col xs={2} md={2}>
+          <Button
+              href="#"
+              variant="danger"
+              style={{  marginTop: 30,borderRadius:50 }}
+            ><DeleteIcon/>
+              Remove
+            </Button>{" "}
+          </Col>
+          <Col xs={2} md={2}>
+        <Button
+              href="/CreateCategory"
+              variant="info"
+              style={{ paddingRight: 30, marginTop: 30,borderRadius:50 }}
+            ><EditIcon/>
+              Edit
+            </Button>{" "}
+        </Col>
+          <Col xs={6} md={6} ></Col>
+          <Col xs={2} md={2} >
             <Button
               href="/ProductCategory"
-              variant="danger"
+              variant="success"
               style={{ paddingRight: 30, marginTop: 30,borderRadius:50 }}
             ><ArrowBackIcon/>
               Back
@@ -55,19 +75,27 @@ function CategoryView() {
                 <Form.Label>Category Name</Form.Label>
                 <Form.Control type="text" placeholder="Computer and Accessories" readOnly disabled style={{backgroundColor:"#93a1a1"}}/>
                 <Row style={{marginBottom:20}}></Row>
-                <Form.Label>Product ID</Form.Label>
+                <Form.Label>Category ID</Form.Label>
                 <Form.Control type="text" placeholder="c147" readOnly disabled muted style={{backgroundColor:"#93a1a1"}}/>
             </Row>
+            <Row>
+            <Form.Label>Description</Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      rows={7}
+                      disabled
+                      readOnly
+                      style={{backgroundColor:"#93a1a1"}}
+                      placeholder="PERFECT GIFT IDEA: Works on wet, dry, Long, short, thick, curly, and straight hair. Perfect gift for Valentines Day, Mother's Day, Thanksgiving, Christmas, Anniversary and Birthday to your girlfriend, wife, mom, sister and friends. NOTE: Paddle brush is designed to have one missing pin on the bottom of the cushion. This is to help with air circulation and is not a product defect."
+                    />
+            </Row>
             <Row style={{marginBottom:30}}>
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>N0 Of Product</Form.Label>
-                <Form.Control type="text"  placeholder="1500" readOnly disabled style={{backgroundColor:"#93a1a1"}} />
+              <Form.Group as={Col} controlId="formGridNew">
+                <Form.Label>Created At</Form.Label>
+                <Form.Control type="Date"  placeholder="17/10/2003" readOnly disabled style={{backgroundColor:"#93a1a1"}} />
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridStatus">
-                <Form.Label>Product Price</Form.Label>
-                <Form.Control type="Number" placeholder="6507" readOnly disabled style={{backgroundColor:"#93a1a1"}}/>
-              </Form.Group>
+             
             </Row>
            
           
@@ -80,6 +108,7 @@ function CategoryView() {
             </Card.Body>
           </Card>
         </Row>
+        <Row style={{marginTop:40}}></Row>
         </Container>
       </div>
     </div></>
